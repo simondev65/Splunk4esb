@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9db968c8-b21a-4cbe-8559-b258a9c6cfdf" activeEnvironment="Default" name="54.194.113" resourceRoot="${projectDir}" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="9bcf9646-5e40-4099-8c2b-0a8c1fa8635e" wadlVersion="http://wadl.dev.java.net/2009/02" name="54.194.113" type="rest" basePath="/services/resaproxy" definitionUrl="http://54.194.113.6:8040/services/resaproxy?_wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://54.194.113.6:8040</con:endpoint></con:endpoints><con:resource name="/" path="/" id="9b24e000-b2d6-4ed9-a0e8-bd33eb3eee85"><con:settings/><con:parameters/><con:resource name="{id}" path="{id}" id="25c9d01d-6714-413f-a307-27dc46e014b5"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" id="2e547a0d-fddf-4bcf-8762-6fff77621f51" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>text/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation></con:method></con:resource><con:method name="GET" id="da7677d2-12c0-4f8a-b5fc-7601092d2451" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>text/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation></con:method><con:method name="POST" id="133436d7-4f5c-4224-a9ff-7cea235d22cf" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="REQUEST" id=""><con:mediaType>text/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>text/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Guillaume" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Paris</city>
+		<email>ayme@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Ayme</name>
+		<status>single</status>
+		<street>rue de charenton</street>
+		<username>ayme</username>
+		<zip>75011</zip>
+	</customer>
+	<room>
+		<roomId>1</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-10-22</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Younes" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.7.137:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Asnières</city>
+		<email>ykhaldi@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Khaldi</name>
+		<status>married</status>
+		<street>rue racine</street>
+		<username>ykhaldi</username>
+		<zip>92350</zip>
+	</customer>
+	<room>
+		<roomId>2</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-06-11</fromDate>
+	<nightNumber>5</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Romain" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Levallois</city>
+		<email>rtestu@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>TESTU</name>
+		<status>married</status>
+		<street>rue villiers</street>
+		<username>rtestu</username>
+		<zip>92300</zip>
+	</customer>
+	<room>
+		<roomId>3</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-05-23</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Irene" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Saint-Cloud</city>
+		<email>irene.martin@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>MARTIN</name>
+		<status>married</status>
+		<street>rue voltaire</street>
+		<username>irene</username>
+		<zip>92800</zip>
+	</customer>
+	<room>
+		<roomId>4</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-08-02</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Sabrina" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Evry</city>
+		<email>sabrina@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Dupond</name>
+		<status>married</status>
+		<street>rue de la fontaine</street>
+		<username>sdupond</username>
+		<zip>91000</zip>
+	</customer>
+	<room>
+		<roomId>5</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-10-16</fromDate>
+	<nightNumber>2</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Martine" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Dunkerque</city>
+		<email>martine@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Dupont</name>
+		<status>married</status>
+		<street>rue boileau</street>
+		<username>martine.dupont</username>
+		<zip>59345</zip>
+	</customer>
+	<room>
+		<roomId>6</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-09-21</fromDate>
+	<nightNumber>16</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Jean" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Nice</city>
+		<email>jean.duchene@gmail.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Duchene</name>
+		<status>single</status>
+		<street>rue verlaine</street>
+		<username>jean.duchene</username>
+		<zip>06100</zip>
+	</customer>
+	<room>
+		<roomId>7</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-12-23</fromDate>
+	<nightNumber>7</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Josette" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Biarritz</city>
+		<email>josette@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Petit</name>
+		<status>married</status>
+		<street>rue Boris Vian</street>
+		<username>jojo</username>
+		<zip>63100</zip>
+	</customer>
+	<room>
+		<roomId>8</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-11-03</fromDate>
+	<nightNumber>4</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource></con:interface><con:testSuite id="ab58c595-baff-4924-956c-6ab1a4f0969f" name="Meetup"><con:description>TestSuite generated for REST Service [54.194.113]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="68e71411-794e-4c48-8b1e-c23c77693874" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="/ TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>TestCase generated for REST Resource [/] located at [/]</con:description><con:settings/><con:testStep type="restrequest" name="Guillaume" id="33232d51-0b11-48a6-a616-e71c8c5a6520"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Guillaume" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Paris</city>
+		<email>ayme@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Ayme</name>
+		<status>single</status>
+		<street>rue de charenton</street>
+		<username>ayme</username>
+		<zip>75011</zip>
+	</customer>
+	<room>
+		<roomId>1</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-10-22</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Younes" id="7c6523c4-583e-4266-9a76-26bf4d428b59"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Younes" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Asnières</city>
+		<email>ykhaldi@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Khaldi</name>
+		<status>married</status>
+		<street>rue racine</street>
+		<username>ykhaldi</username>
+		<zip>92350</zip>
+	</customer>
+	<room>
+		<roomId>2</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-06-11</fromDate>
+	<nightNumber>5</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Romain" id="8d1c0504-2466-4f5d-a5cb-6344bc7c7768"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Romain" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Levallois</city>
+		<email>rtestu@splunk.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>TESTU</name>
+		<status>married</status>
+		<street>rue villiers</street>
+		<username>rtestu</username>
+		<zip>92300</zip>
+	</customer>
+	<room>
+		<roomId>3</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-05-23</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Irene" id="2372a0fa-fc2a-4dc1-9a65-a8d5c19c654f"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Irene" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Saint-Cloud</city>
+		<email>irene.martin@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>MARTIN</name>
+		<status>married</status>
+		<street>rue voltaire</street>
+		<username>irene</username>
+		<zip>92800</zip>
+	</customer>
+	<room>
+		<roomId>4</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-08-02</fromDate>
+	<nightNumber>3</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Sabrina" id="ec2b93e8-5ffd-4c96-8e6e-543addba5a1b"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Sabrina" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Evry</city>
+		<email>sabrina@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Dupond</name>
+		<status>married</status>
+		<street>rue de la fontaine</street>
+		<username>sdupond</username>
+		<zip>91000</zip>
+	</customer>
+	<room>
+		<roomId>5</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-10-16</fromDate>
+	<nightNumber>2</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Martine" id="9e69feec-eefe-4508-b482-3d480953bfdd"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Martine" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Dunkerque</city>
+		<email>martine@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Dupont</name>
+		<status>married</status>
+		<street>rue boileau</street>
+		<username>martine.dupont</username>
+		<zip>59345</zip>
+	</customer>
+	<room>
+		<roomId>6</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-09-21</fromDate>
+	<nightNumber>16</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Jean" id="d43236f2-7794-4e4b-a86f-6ad0e8d73ea8"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Jean" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Nice</city>
+		<email>jean.duchene@gmail.com</email>
+		<gender>M</gender>
+		<id></id>
+		<name>Duchene</name>
+		<status>single</status>
+		<street>rue verlaine</street>
+		<username>jean.duchene</username>
+		<zip>06100</zip>
+	</customer>
+	<room>
+		<roomId>7</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-12-23</fromDate>
+	<nightNumber>7</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Josette" id="2f3e7c4f-e74c-4752-bc73-a90d60924c51"><con:settings/><con:config service="54.194.113" resourcePath="/services/resaproxy/" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Josette" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.98.37:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+	<reservationId></reservationId>
+	<customer>
+		<city>Biarritz</city>
+		<email>josette@gmail.com</email>
+		<gender>F</gender>
+		<id></id>
+		<name>Petit</name>
+		<status>married</status>
+		<street>rue Boris Vian</street>
+		<username>jojo</username>
+		<zip>63100</zip>
+	</customer>
+	<room>
+		<roomId>8</roomId>
+		<room_model></room_model>
+		<rateDay></rateDay>
+	</room>
+	<fromDate>2016-11-03</fromDate>
+	<nightNumber>4</nightNumber>
+	<code></code>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:loadTest id="08445235-cfc6-4475-a95c-f314545c056e" name="Meetup Load Test"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>10</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>180</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties><con:property><con:name>ip</con:name><con:value/></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
