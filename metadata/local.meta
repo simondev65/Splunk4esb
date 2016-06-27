@@ -15,3 +15,7 @@ modtime = 1467055433.150323000
 [views/JMX]
 version = 6.4.0
 modtime = 1467056491.605175000
+
+[views/JMS]
+version = 6.4.0
+modtime = 1467057571.849147000
