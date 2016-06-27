@@ -1,0 +1,14 @@
+<dashboard>
+  <label>Replay</label>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>sourcetype=TalendLog|table payload, _time</query>
+          <earliest></earliest>
+          <latest></latest>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>
