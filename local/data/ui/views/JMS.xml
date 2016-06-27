@@ -11,12 +11,99 @@
   </fieldset>
   <row>
     <panel>
+      <title>Nombre d'erreurs Talend</title>
+      <single>
+        <search>
+          <query>sourcetype=TalendLog logStatus=Err earliest=@d | timechart count span=12h|fillnull count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xd93f3c"]</option>
+        <option name="rangeValues">[0,5,10]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="underLabel">Error number</option>
+        <option name="unitPosition">after</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Warning</title>
+        <search>
+          <query>sourcetype= *  Warn* OR err*  | timechart count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>JMX errors</title>
+        <search>
+          <query>index=_internal ExecProcessor error jmx.py|timechart count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0xd93f3c"]</option>
+        <option name="rangeValues">[0,30,70,100]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="unitPosition">after</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Durée moyenne du GC.</title>
+      <single>
+        <search>
+          <query>* sourcetype=jmx gCDuration=* | timechart span=5m avg(gCDuration)</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xf58f39","0xd93f3c"]</option>
+        <option name="rangeValues">[40,70]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="unit">ms</option>
+        <option name="unitPosition">after</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
       <chart>
         <title>Heap usaged</title>
         <search>
           <query>sourcetype=jmx earliest=@d heapUsed=* |  timechart eval((avg(heapUsed)/avg(heapMax))*100) as Ratio span=10m</query>
-          <earliest></earliest>
-          <latest></latest>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
         <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
@@ -48,8 +135,8 @@
         <title>Temps réel - Utilisation de la Heap Java</title>
         <search>
           <query>sourcetype=jmx heapUsed=* |  timechart eval((max(heapUsed)/max(heapMax))*100) as Ratio span=60s</query>
-          <earliest>rt-5m</earliest>
-          <latest>rt</latest>
+          <earliest>rt-60m</earliest>
+          <latest>rtnow</latest>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
         <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
@@ -74,109 +161,18 @@
         <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
         <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
         <option name="charting.legend.placement">right</option>
-      </chart>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <title>Nombre d'erreurs Talend</title>
-      <single>
-        <search>
-          <query>sourcetype=TalendLog logStatus=Err earliest=@d | timechart count span=12h|fillnull count</query>
-          <earliest>$field1.earliest$</earliest>
-          <latest>$field1.latest$</latest>
-        </search>
         <option name="colorBy">value</option>
         <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
         <option name="numberPrecision">0</option>
-        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xd93f3c"]</option>
-        <option name="rangeValues">[0,5,10]</option>
         <option name="showSparkline">1</option>
         <option name="showTrendIndicator">1</option>
         <option name="trendColorInterpretation">standard</option>
         <option name="trendDisplayMode">absolute</option>
-        <option name="underLabel">Error number</option>
         <option name="unitPosition">after</option>
-        <option name="useColors">1</option>
+        <option name="useColors">0</option>
         <option name="useThousandSeparators">1</option>
-        <option name="linkView">search</option>
-      </single>
+      </chart>
     </panel>
-    <panel>
-      <title>Nombre d'alertes</title>
-      <single>
-        <search>
-          <query>sourcetype=TalendLog logStatus=Warn earliest=@d | timechart count span=12h</query>
-        </search>
-        <option name="colorBy">trend</option>
-        <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
-        <option name="numberPrecision">0</option>
-        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0xd93f3c"]</option>
-        <option name="rangeValues">[0,30,70,100]</option>
-        <option name="showSparkline">1</option>
-        <option name="showTrendIndicator">1</option>
-        <option name="trendColorInterpretation">inverse</option>
-        <option name="trendDisplayMode">absolute</option>
-        <option name="underLabel">Nombre d'alertes sur les 12 dernières heures</option>
-        <option name="unitPosition">after</option>
-        <option name="useColors">1</option>
-        <option name="useThousandSeparators">1</option>
-        <option name="linkView">search</option>
-      </single>
-    </panel>
-    <panel>
-      <single>
-        <title>JMX errors</title>
-        <search>
-          <query>index=_internal ExecProcessor error jmx.py|timechart count</query>
-          <earliest>$field1.earliest$</earliest>
-          <latest>$field1.latest$</latest>
-        </search>
-        <option name="drilldown">none</option>
-        <option name="colorBy">trend</option>
-        <option name="colorMode">none</option>
-        <option name="numberPrecision">0</option>
-        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0xd93f3c"]</option>
-        <option name="rangeValues">[0,30,70,100]</option>
-        <option name="showSparkline">1</option>
-        <option name="showTrendIndicator">1</option>
-        <option name="trendColorInterpretation">inverse</option>
-        <option name="trendDisplayMode">absolute</option>
-        <option name="unitPosition">after</option>
-        <option name="useColors">1</option>
-        <option name="useThousandSeparators">1</option>
-        <option name="linkView">search</option>
-      </single>
-    </panel>
-    <panel>
-      <title>Durée moyenne du GC.</title>
-      <single>
-        <search>
-          <query>* sourcetype=jmx gCDuration=* | stats avg(gCDuration)</query>
-          <earliest>$field1.earliest$</earliest>
-          <latest>$field1.latest$</latest>
-        </search>
-        <option name="colorBy">trend</option>
-        <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
-        <option name="numberPrecision">0.00</option>
-        <option name="rangeColors">["0x65a637","0xf58f39","0xd93f3c"]</option>
-        <option name="rangeValues">[0,100]</option>
-        <option name="showSparkline">1</option>
-        <option name="showTrendIndicator">1</option>
-        <option name="trendColorInterpretation">inverse</option>
-        <option name="trendDisplayMode">absolute</option>
-        <option name="unit">ms</option>
-        <option name="unitPosition">after</option>
-        <option name="useColors">1</option>
-        <option name="useThousandSeparators">1</option>
-        <option name="linkView">search</option>
-      </single>
-    </panel>
-  </row>
-  <row>
     <panel>
       <table>
         <title>JMX error</title>
@@ -193,10 +189,141 @@
   </row>
   <row>
     <panel>
+      <chart>
+        <search>
+          <query>sourcetype=jmx host="*" jvmDescription="*" mbean_domain="java.lang" mbean_property_type="Memory"         | bucket _time span=1m         | stats first(objectsPending) as objectsPending first(heapUsed) as heapUsed first(heapMax) as heapMax first(heapCommitted) as heapCommitted first(nonHeapUsed) as nonHeapUsed first(nonHeapMax) as nonHeapMax first(nonHeapCommitted) as nonHeapCommitted  by _time host jvmDescription |                 timechart max(heapMax) as "Heap Maximum" max(heapUsed) as "Heap Used" by jvmDescription</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">linear</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">zero</option>
+        <option name="charting.chart.overlayFields">"Heap Maximum: talend"</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <search>
+          <query>index=jmx sourcetype=jmx host="*" jvmDescription="*" mbean_domain="java.lang" mbean_property_type="GarbageCollector"         | eval jvmgc=jvmDescription+"_"+gcName         | streamstats current=f global=f window=1 first(colCount) as next_colCount by host jvmgc         | eval d_colCount=next_colCount-colCount         | eval gcFreq=if(next_colCount&gt;colCount, d_colCount, 0)          | bucket _time span=1m         | stats first(jvmgc) as jvmgc first(gcFreq) as gcFreq first(colTime) as colTime first(colCount) as colCount first(memPools) as memPools first(gCStart) as gCStart first(gCEnd) as gCEnd first(gCDuration) as gCDuration first(gCThreadCount) as gCThreadCount by _time host jvmDescription gcName                | timechart max(gCThreadCount) by jvmgc</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">linear</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">zero</option>
+        <option name="charting.chart.overlayFields">"Heap Maximum: talend"</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <search>
+          <query>index=jmx sourcetype=jmx host="*" jvmDescription="*" mbean_domain="java.lang" mbean_property_type="OperatingSystem" OR "Runtime"         | eval swapUsed=swapSpace-freeSwap         | eval memoryUsed=physMem-freePhysMem          | bucket _time span=1m          | stats first(name) as name first(version) as version first(arch) as arch first(jvmUptime) as jvmUptime first(cpuTime) as cpuTime first(processors) as cpus first(sysLoad) as sysLoad first(openFD) as openFD first(maxFD) as maxFD first(physMem) as physMem first(memoryUsed) as memoryUsed first(swapSpace) as swapSpace first(swapUsed) as swapUsed first(committed) as committed by _time host jvmDescription                  | timechart avg(sysLoad) as "Load Factor" by host</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">linear</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.overlayFields">"Heap Maximum: talend"</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Description des alertes</title>
+      <table>
+        <search>
+          <query>* sourcetype=TalendLog logStatus=WARN | stats count by javaerr | rename count as "Nombre d'alertes", javaerr as "Description de l'alerte"</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+    <panel>
+      <title>Description des erreurs</title>
+      <table>
+        <search>
+          <query>* sourcetype=TalendLog logStatus=Error | stats count by errorDescription | rename count as "Nombre d'erreurs", errorDescription as "Description de l'erreur"</query>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+    <panel>
       <title>Répartition par statut</title>
       <chart>
         <search>
           <query>* sourcetype=TalendLog | stats count by logStatus</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
         <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
@@ -226,10 +353,13 @@
   </row>
   <row>
     <panel>
-      <title>Description des erreurs</title>
       <table>
+        <title>rare clustered payload</title>
         <search>
-          <query>* sourcetype=TalendLog logStatus=Error | stats count by errorDescription | rename count as "Nombre d'erreurs", errorDescription as "Description de l'erreur"</query>
+          <query>sourcetype="talendlog" payload=*|cluster showcount=t |sort 3 cluster_count|table cluster_count, 
+ payload</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
@@ -238,15 +368,13 @@
         <option name="count">10</option>
       </table>
     </panel>
-  </row>
-  <row>
     <panel>
-      <title>Description des alertes</title>
       <table>
+        <title>most common payload</title>
         <search>
-          <query>* sourcetype=TalendLog logStatus=WARN | stats count by javaerr | rename count as "Nombre d'alertes", javaerr as "Description de l'alerte"</query>
-          <earliest>0</earliest>
-          <latest></latest>
+          <query>sourcetype="talendlog" payload=*|cluster showcount=t |sort 3 - cluster_count|table cluster_count,  payload</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
