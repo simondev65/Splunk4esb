@@ -131,8 +131,8 @@
 	<fromDate>2016-09-21</fromDate>
 	<nightNumber>16</nightNumber>
 	<code></code>
-</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Jean" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.194.113.6:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
-<tns:Reservation xmlns:tns='http://services.talend.org/ReservationChambre'>
+</tns:Reservation>]]></con:request><con:originalUri>http://54.194.113.6/services/resaproxy/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Jean" id="c7d23b54-2080-40ea-85b0-46861c37615b" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="operationName" value="addReservation" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://54.171.10.255:8040</con:endpoint><con:request><![CDATA[<?xml version='1.0' encoding='UTF-8'?>
+<tns:Reservakjhdsaion xmlns:tns='http://services.talend.org/ReservationChambre'>
 	<reservationId></reservationId>
 	<customer>
 		<city>Nice</city>
