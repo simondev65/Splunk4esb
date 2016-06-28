@@ -14,7 +14,7 @@
       <title>Nombre d'erreurs Talend</title>
       <single>
         <search>
-          <query>sourcetype=TalendLog logStatus=Err earliest=@d | timechart count span=12h|fillnull count</query>
+          <query>sourcetype=TalendLog logStatus=Error | timechart count</query>
           <earliest>$field1.earliest$</earliest>
           <latest>$field1.latest$</latest>
         </search>
@@ -39,11 +39,22 @@
       <single>
         <title>Warning</title>
         <search>
-          <query>sourcetype= *  Warn* OR err*  | timechart count</query>
+          <query>sourcetype=TalendLog logStatus=WARN | timechart count</query>
           <earliest>$field1.earliest$</earliest>
           <latest>$field1.latest$</latest>
         </search>
         <option name="drilldown">none</option>
+        <option name="colorBy">value</option>
+        <option name="colorMode">none</option>
+        <option name="numberPrecision">0</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="unitPosition">after</option>
+        <option name="useColors">0</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
       </single>
     </panel>
     <panel>
@@ -294,8 +305,8 @@
       <table>
         <search>
           <query>* sourcetype=TalendLog logStatus=WARN | stats count by javaerr | rename count as "Nombre d'alertes", javaerr as "Description de l'alerte"</query>
-          <earliest>0</earliest>
-          <latest></latest>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
@@ -309,6 +320,8 @@
       <table>
         <search>
           <query>* sourcetype=TalendLog logStatus=Error | stats count by errorDescription | rename count as "Nombre d'erreurs", errorDescription as "Description de l'erreur"</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
